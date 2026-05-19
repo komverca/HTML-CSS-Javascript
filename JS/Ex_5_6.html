@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!--Ex5-->
+    <h2 id="h2">Nadpis</h2>
+    <button id="button">Click me!</button>
+
+    <script>
+        let nadpis = document.getElementById("h2");
+        button.addEventListener("click", function(){
+            h2.innerText = "Změna"
+        });
+    </script>
+
+    <!--Ex6-->
+    <button id="load">Load Message</button>
+    <p id="message"></p>
+
+    <script>
+        function fetchMessage(){
+            return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve("Hello from the future!");
+        }, 2000);
+      });
+        }
+
+        const button = document.getElementById("load");
+        const message = document.getElementById("message");
+
+        button.addEventListener("click", async function () {
+        const result = await fetchMessage();
+        message.innerText = result;
+        });
+
+    </script>
+
+</body>
+</html>
